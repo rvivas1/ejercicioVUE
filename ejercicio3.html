@@ -1,13 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <title>Document</title>
+    <title>Fotocopias</title>
 </head>
 <body>
+    <div id= "app2">
+        <div class="container">
+            <h2>Ejercico 3</h2>
+            <div class="input-group input-group-sm mb-3">
+                <span class="input-group-text" id="inputGroup-sizing-sm">cantCopias </span>
+                <input v-model.number='cantCopias' type="text" class="form-control" aria-describedby="inputGroup-sizing-sm">
+              </div>
+              <button type="button" @click="totalPagar" class="btn btn-primary">Cobrar</button>
+              <h3 v-text='total'></h3>
+        </div>
+    </div>
     
 </body>
 <script src="js/vue.js"></script>
