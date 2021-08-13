@@ -1,18 +1,33 @@
 var app = new Vue({
     el: '#app',
     data: {
-        name: "",
-        phone: "",
-        age: "",
-        rta1:"",
-        rta2: "",
-        rta3:""
+      num1: null,
+      num2: null,
+      rta: null
+
     },
-    methods: {
-        message() {
-            this.rta1= 'Nombre: ' + this.name;
-            this.rta2= 'Tel: ' + this.phone;
-            this.rta3= 'Edad: ' + this.age;
+    methods:{
+        sumar(){
+           this.rta= this.num1 + this.num2;
+           
+
         },
-    },
-});
+        restar(){
+            this.rta= this.num1 - this.num2;
+            
+        },
+        multiplicar(){
+            this.rta= this.num1 * this.num2;
+
+        },
+        dividir(){
+            if (this.num2==0){
+                this.rta='No se puede dividir por 0';
+            }
+            else {
+                this.rta= this.num1/this.num2;
+            }
+
+        }
+    }
+  })
