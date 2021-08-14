@@ -1,13 +1,11 @@
 var app = new Vue({
-    el: '#app2',
+    el: '#app4',
     data: {
         opcion:null,
         pPera: 600,
         pPiña: 1800,
         cant: 1,
-        total= 0
-
-
+        total: ""
     },
     methods:{
     },

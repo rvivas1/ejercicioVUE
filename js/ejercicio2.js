@@ -1,5 +1,5 @@
 var app = new Vue({
-    el: '#app1',
+    el: '#app2',
     data: {
       desc: 0.2,
       compra: "",
