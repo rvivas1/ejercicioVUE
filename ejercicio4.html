@@ -13,13 +13,38 @@
     <div id='app4'>
         <div class="container">
             <h3>Supermercado</h3>
-            <select v-model class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
-                <option selected>Seleccione el producto que desea comprar</option>
-                <option value="2">Pera</option>
-                <option value="1">Piña</option>
+            <br>
+            <select v-model="opcion" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                <option value="0" selected> Seleccione el producto que desea comprar</option>
+                <option value="1">Pera</option>
+                <option value="2">Piña</option>
             </select>
-            <button type="button" @click="message" class="btn btn-primary">Agregarar</button>
-            <button type="button" @click="message" class="btn btn-primary">Pagar</button>
+            <div class="input-group mb-2">
+                <span class="input-group-text">Cantidad</span>
+                <input v-model.number='cant' type="text" class="form-control"
+                    placeholder="Ingrese la cantidad de fruta que desea comprar">
+            </div>
+            <button type="button" @click="calcularTotal" class="btn btn-danger">Agregar</button>
+            <button type="button" @click="totalPagar" class="btn btn-dark">Pagar</button>
+            <br>
+            <br>
+            <!-- Subtotal -->
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">Subtotal</span>
+                <span v-text="total" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1"></span>    
+            </div>
+            <div v-show="isPagar" class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">Total</span>
+                <span v-text="tPagar" class="form-control" aria-label="Username" aria-describedby="basic-addon1"></span>
+            </div>
+            <div v-show="isPagar" class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">Efectivo</span>
+                <input v-model="tEfectivo" type="text" class="form-control" placeholder="Ingrese el efectivo" aria-label="Username" aria-describedby="basic-addon1">
+            </div>
+
+            <button @click="efectivo" type="button"  class="btn btn-danger">Finalizar compra</button>
+
+
 
         </div>
 
