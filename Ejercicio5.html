@@ -6,11 +6,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <title>Fotocopías</title>
+    <title>Calcular edad</title>
 </head>
 
 <body>
     <div id='app5'>
+        <div class="container">
+            <h3>Calcular edad</h3>
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">Año de nacimiento</span>
+                <input v-model.number="aNac" type="text" class="form-control" placeholder="ingrese año" aria-label="Username" aria-describedby="basic-addon1">
+              </div>
+              <button @click='calcEdad' type="button" class="btn btn-info">Calcula edad</button>
+            <!-- <h3 v-text="rta"></h3> -->
         </div>
     </div>
 
