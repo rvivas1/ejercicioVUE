@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <title>Ejercicio compras</title>
+</head>
+
+<body>
+    <div id="app6">
+        <div class="container">
+            <h3>Compras</h3>
+            <select v-model="opcionP" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                <option value="0" selected> Seleccione el producto que desea comprar</option>
+                <option value="1">Res</option>
+                <option value="2">Cerdo</option>
+            </select>
+            <select v-model="opcionC" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                <option value="0" selected> Seleccione el cliente</option>
+                <option value="1">Juan</option>
+                <option value="2">Victoria</option>
+            </select>
+            <div class="input-group mb-2">
+                <span class="input-group-text">Cantidad</span>
+                <input v-model.number='cant' type="text" class="form-control" placeholder="Cantidad por kilo">
+            </div>
+            <button @click="totalCompra" type="button" class="btn btn-danger">Agregar</button>
+            <br>
+            <br>
+            <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Total Juan</span>
+            <span v-text="totalJuan" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1"></span>
+            <span class="input-group-text" id="basic-addon1">Total Victoria</span>
+            <span v-text="totalVictoria" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1"></span>
+            </div>
+            <h3 v-text="rta"></h3>
+        </div>
+    </div>
+
+</body>
+<script src="js/vue.js"></script>
+<script src="js/Ejercicio6.js"></script>
+
+</html>
