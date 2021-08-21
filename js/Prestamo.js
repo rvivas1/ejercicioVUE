@@ -15,7 +15,7 @@ var app = new Vue({
     },
     methods: {
         calCuotas(){
-            //Libra inversión
+            //Libre inversión
             if(this.opcion=="1" && this.numCuotas < 6){
                 this.interes=this.prestamo*(this.lInversion-this.descuento1);
                 this.tCuota=(this.prestamo+(this.interes*this.numCuotas))/this.numCuotas;
