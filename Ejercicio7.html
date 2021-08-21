@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <title>Generar créditos</title>
+</head>
+
+<body>
+    <div id="app7">
+        <div class="container">
+            <h1>BANCO PRESTAYA!</h1>
+            <h3>Generar crédito</h3>
+
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">Valor solicitado</span>
+                <input v-model.number="prestamo" type="text" class="form-control" placeholder="Ingrese valor" aria-label="Username"
+                    aria-describedby="basic-addon1">
+            </div>
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">Número de cuotas</span>
+                <input v-model.number="numCuotas" type="text" class="form-control" placeholder="Número de cuotas" aria-label="Username"
+                    aria-describedby="basic-addon1">
+            </div>
+            <select v-model="opcion" class="form-select" aria-label="Default select example">
+                <option value="0" selected>Seleccione el tipo de crédito</option>
+                <option value="1">Crédito de libre inversión</option>
+                <option value="2">Crédito por libranza</option>
+            </select>
+            <br>
+            <button @click="calCuotas" type="button" class="btn btn-success">Calcular</button>
+            <h3 v-text="tCuota"></h3>
+        </div>
+    </div>
+
+</body>
+<script src="js/vue.js"></script>
+<script src="js/Ejercicio7.js"></script>
+
+</html>
