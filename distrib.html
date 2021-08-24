@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <title>Distribuidora</title>
+</head>
+
+<body>
+    <div id="app">
+        <div class="container">
+            <h2>DISTRIBUIDORA</h2>
+            <h3>Venta de arroz</h3>
+            <select v-model="opcion" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                <option value="0" selected>Seleccione una bodega</option>
+                <option value="1">Bodega 1</option>
+                <option value="2">Bodega 2</option>
+            </select>
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">Cantidad</span>
+                <input v-model.number="cant" type="text" class="form-control" placeholder="Ingrese cantidad">
+            </div>
+            <div class="d-grid gap-2">
+                <button @click="totalVenta" type="button" class="btn bg-success">Vender</button>
+            </div>
+            <br>
+            <br>
+            <h4>Disponible en stok:</h4>
+            <div class="input-group mb-3">
+                <span class="input-group-text bg-secondary" id="basic-addon1">Bodega 1</span>
+                <span v-text="bod1" type="text" class="form-control">
+            </div>
+            <div class="input-group mb-3">
+                <span class="input-group-text bg-primary" id="basic-addon1">Bodega 2</span>
+                <span v-text="bod2" type="text" class="form-control">
+            </div>
+            <!-- boton1 -->
+            <div class="d-grid gap-2">
+                <button v-if="isBoton" @click="verVentas" type="button" class="btn btn bg-secondary">
+                    Ver ventas
+                </button>
+                <button v-else @click="ocultarVentas" type="button" class="btn btn-primary">
+                    Ocultar ventas
+                </button>
+            </div>
+            <h3 v-text="msj">msj</h3>
+            <br>
+            <!-- lo que se muestra y se oculta -->
+            <div v-show="isVenta">
+                <h4>Ventas:</h4>
+                <div class="input-group mb-3">
+                    <span class="input-group-text bg-secondary" id="basic-addon1">Bodega 1</span>
+                    <h1 v-text="ventas1" class="form-control" aria-describedby="basic addon1">
+                </div>
+                <div class="input-group mb-3">
+                    <span class="input-group-text bg-primary" id="basic-addon1">Bodega 2</span>
+                    <h1 v-text="ventas2" type="text" class="form-control" aria-describedby="basic addon1"></h1>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+<script src="js/vue.js"></script>
+<script src="js/distrib.js"></script>
+
+</html>

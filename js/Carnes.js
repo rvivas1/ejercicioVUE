@@ -15,8 +15,7 @@ var app = new Vue({
         totalCompra(){
             if(this.opcionP=="1"){
                 this.subtotal=this.cant*this.res;
-                if(this.opcionC=="1")
-                {
+                if(this.opcionC=="1"){
                     this.totalJuan+=this.subtotal;
                     this.cont+= 1;
                 }
